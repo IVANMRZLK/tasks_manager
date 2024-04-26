@@ -9,6 +9,10 @@ window.option_add("*tearOff", FALSE)
 
 
 # функции для исполняющих виджетов
+def zagluschka():
+    pass
+
+
 def click_add_task_from_menu():
     window2 = Tk()
     window2.title("Добавление задач")
@@ -21,8 +25,36 @@ def click_add_project_from_menu():
     window3 = Tk()
     window3.title("Добавление задач")
     window3.geometry("2500x500")
-    label = ttk.Label(window3, text="Здесь когда-нибудь будут добаляться проекты")
-    label.pack(anchor=CENTER, expand=1)
+
+    label_project_name = ttk.Label(window3, text="Название проекта")
+    label_project_name.place(x=20, y=35)
+    project_name = ttk.Entry(window3)
+    project_name.place(x=20, y=60)
+
+    label_project_type = ttk.Label(window3, text="Тип проекта")
+    label_project_type.place(x=200, y=35)
+    project_types = ['Фриланс', 'Поиск работы', 'Pet-проект', 'Обучение']
+    project_type = ttk.Combobox(window3, values=project_types)
+    project_type.place(x=200, y=60)
+
+    label_project_cyclicality = ttk.Label(window3, text="Цикличность проекта")
+    label_project_cyclicality.place(x=400, y=35)
+    project_cyclicalities = ['Единоразовый', 'Ежедневный', 'Еженедельный']
+    project_cyclicality = ttk.Combobox(window3, values=project_cyclicalities)
+    project_cyclicality.place(x=400, y=60)
+
+    label_new_project_task = ttk.Label(window3, text="Новая задача")
+    label_new_project_task.place(x=20, y=115)
+    new_project_task = ttk.Entry(window3)
+    new_project_task.place(x=20, y=140)
+
+    btn_append_new_task = ttk.Button(window3, text="Добавить задачу", command=zagluschka)
+    btn_append_new_task.place(x=400, y=140)
+
+    btn_create_project = ttk.Button(window3, text="Создать проект", command=zagluschka)
+    btn_create_project.place(x=200, y=240)
+    # label = ttk.Label(window3, text="Здесь когда-нибудь будут добаляться проекты")
+    # label.pack(anchor=CENTER, expand=1)
 
 
 def click_add_note_from_menu():
